@@ -7,84 +7,392 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
-    <nav class="navbar">
-      <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Projects</a></li>
-        <li><a href="">Skills</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
+<header class="header">
+    <div class="header-container">
+        <div class="header-logo">
+            <span class="logo-text">Solon</span>
+        </div>
+        
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-controls">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg class="close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <button id="theme-switch" aria-label="Toggle dark/light mode">
+                <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 17q-2.075 0-3.537-1.463T7 12t1.463-3.537T12 7t3.538 1.463T17 12t-1.463 3.538T12 17m-7-4H1v-2h4zm18 0h-4v-2h4zM11 5V1h2v4zm0 18v-4h2v4zM6.4 7.75L3.875 5.325L5.3 3.85l2.4 2.5zm12.3 12.4l-2.425-2.525L17.6 16.25l2.525 2.425zM16.25 6.4l2.425-2.525L20.15 5.3l-2.5 2.4zM3.85 18.7l2.525-2.425L7.75 17.6l-2.425 2.525z"/>
+                </svg>
+                <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 21q-3.75 0-6.375-2.625T3 12t2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <div class="sidebar-logo">
+            <span class="logo-text">Solon</span>
+            <span class="logo-subtitle">Web Developer</span>
+        </div>
+        <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+    
+    <nav class="sidebar-nav">
+        <ul>
+            <li><a href="#home" class="sidebar-link"><span>🏠</span> Home</a></li>
+            <li><a href="#about" class="sidebar-link"><span>👤</span> About</a></li>
+            <li><a href="#projects" class="sidebar-link"><span>💼</span> Projects</a></li>
+            <li><a href="#skills" class="sidebar-link"><span>⚡</span> Skills</a></li>
+            <li><a href="#contact" class="sidebar-link"><span>✉️</span> Contact</a></li>
+        </ul>
     </nav>
-   <button id="theme-switch">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000" d="M12 17q-2.075 0-3.537-1.463T7 12t1.463-3.537T12 7t3.538 1.463T17 12t-1.463 3.538T12 17m-7-4H1v-2h4zm18 0h-4v-2h4zM11 5V1h2v4zm0 18v-4h2v4zM6.4 7.75L3.875 5.325L5.3 3.85l2.4 2.5zm12.3 12.4l-2.425-2.525L17.6 16.25l2.525 2.425zM16.25 6.4l2.425-2.525L20.15 5.3l-2.5 2.4zM3.85 18.7l2.525-2.425L7.75 17.6l-2.425 2.525z"/></svg>
-   <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><path fill="#f4f4f4" d="M12 21q-3.75 0-6.375-2.625T3 12t2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21"/></svg>
-   </button>
-  </header>
+    
+    <div class="sidebar-social">
+        <h3>Connect With Me</h3>
+        <div class="sidebar-social-icons">
+            <a href="#" class="sidebar-social-icon" title="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
+                    <path fill="currentColor" d="m9.237 7.004l4.84-5.505H12.93L8.727 6.28L5.371 1.5H1.5l5.075 7.228L1.5 14.499h1.147l4.437-5.047l3.545 5.047H14.5zM7.666 8.791l-.514-.72L3.06 2.344h1.762l3.302 4.622l.514.72l4.292 6.007h-1.761z"/>
+                </svg>
+            </a>
+            <a href="#" class="sidebar-social-icon" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+                </svg>
+            </a>
+            <a href="#" class="sidebar-social-icon" title="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/>
+                </svg>
+            </a>
+            <a href="#" class="sidebar-social-icon" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</aside>
+
   <main class="main">
-    <div class="mainPage1">
-      <div class="mainImage">
-       <img src="solon1.jpg" alt="Solon Face">
-       <div class="mainSocial">
-        <div class="social"><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 16 16"><path fill="#656565" d="m9.237 7.004l4.84-5.505H12.93L8.727 6.28L5.371 1.5H1.5l5.075 7.228L1.5 14.499h1.147l4.437-5.047l3.545 5.047H14.5zM7.666 8.791l-.514-.72L3.06 2.344h1.762l3.302 4.622l.514.72l4.292 6.007h-1.761z"/></svg></a></div>
-        <div class="social"><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#656565" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg></a></div>
-        <div class="social"><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#656565" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/></svg></a></div>
+    <section id="home" class="section">
+      <div class="container">
+        <div class="mainPage1">
+          <div class="mainImage">
+           <img src="solon2.png" alt="Solon Face">
+           <div class="mainSocial">
+            <div class="social"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 16 16"><path fill="#656565" d="m9.237 7.004l4.84-5.505H12.93L8.727 6.28L5.371 1.5H1.5l5.075 7.228L1.5 14.499h1.147l4.437-5.047l3.545 5.047H14.5zM7.666 8.791l-.514-.72L3.06 2.344h1.762l3.302 4.622l.514.72l4.292 6.007h-1.761z"/></svg></a></div>
+            <div class="social"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#656565" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg></a></div>
+            <div class="social"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#656565" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/></svg></a></div>
+          </div>
+         </div>
+        <div class="page1Text">
+          <h1>Hi I'm Solon Lawrence</h1>
+          <p>Aspiring Web Developer | IT Student</p>
+          <p>I build clean, modern, and responsive website using HTML, CSS and JavaScript.</p>
+          <p>Currently focused on mastering frontend development and expanding my skills.</p>
+          <p>"Yesterday is history, tomorrow is a mystery, but today is a gift. That is why it is called the present."
+            <br>
+            - Master Oogway
+          </p>
+        </div>
+        </div>
       </div>
-     </div>
-    <div class="page1Text">
-      <h1>Hi I'm Solon Lawrence</h1>
-      <p>Aspiring Web Developer | IT Student</p>
-      <p>I build clean, modern, and responsive website using HTML, CSS and JavaScript.</p>
-      <p>Current focused on mastering fronted development and expanding my skils.</p>
-      <p>Time is Short.</p>
-    </div>
-    </div>
-        <div class="skills">
-        <h2>Skils & Technologies</h2>
-      <div class="skills-list">
-        <div class="skil">HTML</div>
-        <div class="skil">CSS</div>
-        <div class="skil">JavaScript</div>
-        <div class="skil">Git & GitHub</div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-wrapper">
+          <div class="about-content">
+            <h1>Hi 👋 I'm Solon Lawrence</h1>
+            <div class="about-text">
+              <p>
+                Hi, my name is Solon Lawrence. I'm originally from Kananga, Leyte,
+                where I completed my high school education. Currently, I'm pursuing a 
+                Bachelor of Science in Information Technology as a 2nd year student at EVSU Ormoc.
+              </p>
+              <p>
+                My primary technical interest lies in web development, with a specific focus on becoming a frontend developer. 
+                I'm passionate about creating clean, modern, and user friendly interfaces that provide excellent user experiences.
+              </p>
+              <p>
+                Outside of technology, I enjoy watching tech tutorials and staying updated with the latest web development trends. 
+                I'm also an avid reader of manga and enjoy watching anime.
+              </p>
+            </div>
+          </div>
+          <div class="about-image">
+            <img src="solon3.jpg" alt="Solon Lawrence">
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="project1.jpg" alt="Login + CRUD Application">
+            </div>
+            <div class="project-content">
+              <h3>Login + CRUD</h3>
+              <p class="project-desc">Login system where you can edit text, count characters, delete, and save data.</p>
+              <div class="project-meta">
+                <p><strong>Role:</strong> Coder</p>
+                <p><strong>Tools:</strong> C# (Microsoft Visual Studio)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="skills" class="section">
+    <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-container">
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12 18l-6.316 3.2l1.208-7.024L2.2 9.6l7.04-1.024L12 2.4l2.76 6.176l7.04 1.024l-5.092 4.576l1.208 7.024z"/>
+                        </svg>
+                    </div>
+                    <h3>HTML5</h3>
+                    <p>Semantic markup, accessibility standards, and modern HTML5 features.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar"></div>
+                        <span class="skill-progress-text">90%</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M5 3l-.65 3.34h13.59L17.5 8.5H3.92l-.66 3.33h13.59l-.76 3.81l-5.48 1.81l-4.75-1.81l.33-1.64H2.85l-.79 4l7.85 3l9.05-3l1.2-6.03l.24-1.21L21.94 3z"/>
+                        </svg>
+                    </div>
+                    <h3>CSS3</h3>
+                    <p>Responsive design, Flexbox, Grid, animations, and modern CSS features.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar"></div>
+                        <span class="skill-progress-text">85%</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M3 3h18v18H3V3m4.73 15.04c.4.85 1.19 1.55 2.54 1.55c1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7v5.74c0 .86-.35 1.08-.9 1.08c-.58 0-.82-.4-1.09-.87l-1.38.83m5.98-.18c.5.98 1.51 1.73 3.09 1.73c1.6 0 2.8-.83 2.8-2.36c0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02c0-.41.31-.73.81-.73c.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33c-1.51 0-2.48.96-2.48 2.23c0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13c0 .48-.45.83-1.15.83c-.83 0-1.31-.43-1.67-1.03l-1.38.8z"/>
+                        </svg>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>ES6+, DOM manipulation, async programming, and modern JS patterns.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar"></div>
+                        <span class="skill-progress-text">80%</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M2.5 10.56l9 5.2a1 1 0 0 0 1 0l9-5.2a1 1 0 0 0 0-1.73l-9-5.2a1 1 0 0 0-1 0l-9 5.2a1 1 0 0 0 0 1.73m9-8.36l7 4.06v8.12l-7 4.06l-7-4.06V6.26zM3.5 7.88l2.08 1.2l-2.08 1.2V7.88m8 9.86l-2.08-1.2l2.08-1.2v2.4m-7.12-4.8l2.08 1.2l-2.08 1.2v-2.4m1 5.86l2.08 1.2l-2.08 1.2v-2.4m6.12 2.4l-2.08-1.2l2.08-1.2v2.4m-4.12-4.8l2.08 1.2l-2.08 1.2v-2.4m8-1l2.08 1.2l-2.08 1.2v-2.4m-1-5.86l2.08 1.2l-2.08 1.2V7.88m-6 11.72l7-4.06V15.5l-7 4.06v.04z"/>
+                        </svg>
+                    </div>
+                    <h3>Git & GitHub</h3>
+                    <p>Version control, collaboration workflows, and repository management.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar"></div>
+                        <span class="skill-progress-text">75%</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M21 9l-9-7l-9 7v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9m-9 10V9m-6 10V9m12 10V9"/>
+                        </svg>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Mobile-first approach, fluid layouts, and cross-device compatibility.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar"></div>
+                        <span class="skill-progress-text">85%</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>VS Code</h3>
+                    <p>Efficient coding workflow, extensions, and developer tools proficiency.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar"></div>
+                        <span class="skill-progress-text">90%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"/>
+                </svg>
+              </div>
+              <h3>Email</h3>
+              <a href="mailto:solon@example.com" class="contact-link">solon@example.com</a>
+              <p>I'll respond within 24 hours</p>
+            </div>
+            
+            <div class="contact-social">
+              <h3>Follow Me</h3>
+              <p>Connect with me on social media</p>
+              <div class="contact-social-icons">
+                <a href="#" class="social-icon" title="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+                  </svg>
+                </a>
+                <a href="#" class="social-icon" title="LinkedIn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/>
+                  </svg>
+                </a>
+                <a href="#" class="social-icon" title="Facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/>
+                  </svg>
+                </a>
+                <a href="#" class="social-icon" title="Twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
+                    <path d="m9.237 7.004l4.84-5.505H12.93L8.727 6.28L5.371 1.5H1.5l5.075 7.228L1.5 14.499h1.147l4.437-5.047l3.545 5.047H14.5zM7.666 8.791l-.514-.72L3.06 2.344h1.762l3.302 4.622l.514.72l4.292 6.007h-1.761z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div class="contact-note">
+              <h3>Let's Work Together</h3>
+              <p>I'm open to collaboration opportunities, freelance projects, and full-time positions.</p>
+              <p>Whether you have a project in mind or just want to say hello, feel free to reach out!</p>
+            </div>
+          </div>
+          
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name" id="name-label">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name" aria-labelledby="name-label" aria-required="true">
+              </div>
+              
+              <div class="form-group">
+                <label for="email" id="email-label">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address" aria-labelledby="email-label" aria-required="true">
+              </div>
+              
+              <div class="form-group">
+                <label for="subject" id="subject-label">Subject</label>
+                <input type="text" id="subject" name="subject" required placeholder="What is this regarding?" aria-labelledby="subject-label" aria-required="true">
+              </div>
+              
+              <div class="form-group">
+                <label for="message" id="message-label">Your Message</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or inquiry..." aria-labelledby="message-label" aria-required="true"></textarea>
+              </div>
+              
+              <button type="submit" class="submit-btn">
+                <span>Send Message</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M2.01 21L23 12L2.01 3L2 10l15 2l-15 2z"/>
+                </svg>
+              </button>
+              
+              <div class="form-notice">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span>I'll get back to you as soon as possible!</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="footer">
-  <div class="footer-content">
-    <p>© 2023 Solon Lawrence. All rights reserved.</p>
-    <div class="footer-social">
-      <a href="#" title="Twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
-          <path d="m9.237 7.004l4.84-5.505H12.93L8.727 6.28L5.371 1.5H1.5l5.075 7.228L1.5 14.499h1.147l4.437-5.047l3.545 5.047H14.5zM7.666 8.791l-.514-.72L3.06 2.344h1.762l3.302 4.622l.514.72l4.292 6.007h-1.761z"/>
-        </svg>
-      </a>
-      <a href="#" title="GitHub">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
-        </svg>
-      </a>
-      <a href="#" title="Facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/>
-        </svg>
-      </a>
-      <a href="#" title="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/>
-        </svg>
-      </a>
+    <div class="container">
+      <div class="footer-content">
+        <p>© 2023 Solon Lawrence. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" title="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
+              <path d="m9.237 7.004l4.84-5.505H12.93L8.727 6.28L5.371 1.5H1.5l5.075 7.228L1.5 14.499h1.147l4.437-5.047l3.545 5.047H14.5zM7.666 8.791l-.514-.72L3.06 2.344h1.762l3.302 4.622l.514.72l4.292 6.007h-1.761z"/>
+            </svg>
+          </a>
+          <a href="#" title="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+            </svg>
+          </a>
+          <a href="#" title="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/>
+            </svg>
+          </a>
+          <a href="#" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="linkHeader">
+          <div class="footerLink"><a href="#about">About</a></div>
+          <div class="footerLink"><a href="#projects">Projects</a></div>
+          <div class="footerLink"><a href="#skills">Skills</a></div>
+          <div class="footerLink"><a href="#contact">Contact</a></div>
+        </div>
+      </div>
     </div>
-    <div class="linkHeader">
-      <div class="footerLink"><a href="">About</a></div>
-      <div class="footerLink"><a href="">Projects</a></div>
-      <div class="footerLink"><a href="">Skills</a></div>
-      <div class="footerLink"><a href="">Contact</a></div>
-    </div>
-  </div>
-</footer>
+  </footer>
+  
   <script src="javascript.js"></script>
 </body>
 </html>
-
-
